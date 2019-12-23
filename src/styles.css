@@ -7,3 +7,25 @@
 .container {
     background: #f0f4f4;
 }
+
+.heading-light {
+    font-weight: 200;
+}
+
+p {
+    font-weight: 200;
+}
+
+.dojo-btn {
+    color: #333;
+    background: #fff;
+    border: 1px solid #fff;
+    height: 40px;
+    width: 40%;
+}
+
+.dojo-btn:hover {
+    color: #fff;
+    background: #333;
+    transition: 300ms;
+}
