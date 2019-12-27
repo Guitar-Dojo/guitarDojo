@@ -1,0 +1,11 @@
+.header-image {
+    height: 250px;
+    background: url('../../assets/homeAssets/guitarDojoHome.jpg') no-repeat center center;
+}
+
+.form-container {
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 5px 10px 8px #888888; */
+}

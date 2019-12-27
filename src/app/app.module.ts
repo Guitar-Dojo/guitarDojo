@@ -1,24 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
+    AboutComponent,
     AppComponent,
-    LandingPageComponent,
+    ContactComponent,
     HomeComponent,
+    LandingPageComponent,
     NavComponent,
-    AboutComponent
   ],
   imports: [
+    AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatIconModule
+  ],
+  exports: [
+    // MatFormField
   ],
   providers: [],
   bootstrap: [AppComponent]
