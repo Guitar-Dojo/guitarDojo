@@ -5,7 +5,10 @@ import { Observable } from 'rxjs';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  })
 };
 
 @Injectable({
@@ -15,8 +18,9 @@ export class ContactService {
 
   constructor(private http: HttpClient) {}
 
-  createContact(contact: Object) {
-    return this.http.post(environment.apiUrl + 'create', contact, httpOptions) as Observable<any>;
+  createContact(contact: Object): Observable<Object> {
+    console.log(contact);
+    return this.http.post<Object>(environment.apiUrl + 'contact/create', contact, httpOptions);
   }
 
 }

@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   phonePattern = '/^\(\d{3}\)\s\d{3}-\d{4}$/';
 
-  contacts: any[];
+  contact: any;
 
   ngOnInit() {
     this.contactForm = this.creatForm();
@@ -42,13 +42,13 @@ export class ContactComponent implements OnInit {
       'email': this.contactForm.controls.email.value,
       'phone': this.contactForm.controls.phone.value,
       'message': this.contactForm.controls.message.value
-    }
-    console.log(ob);
-    this.cs.createContact(ob).subscribe(contacts => {
-      if (contacts) {
-        this.contacts = contacts;
+    };
+    this.cs.createContact(ob).subscribe(contact => {
+      console.log(contact);
+      if (contact) {
+        this.contact = contact;
       }
-    })
+    });
     this.clearFunction();
   }
 

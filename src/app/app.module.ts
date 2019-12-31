@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
+import { NgxMaskModule } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AboutComponent } from './about/about.component';
@@ -34,6 +35,7 @@ import { NavComponent } from './nav/nav.component';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
+    NgxMaskModule,
     ReactiveFormsModule
   ],
   exports: [
