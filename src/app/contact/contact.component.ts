@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
-import { ContactService } from 'src/services/Contact.service';
+import { ContactService } from 'src/app/services/Contact.service';
+import { EmailService } from 'src/app/services/Email.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
   @ViewChild('formDirective') private formDirective: NgForm;
   contactForm: FormGroup;
 
@@ -16,13 +18,17 @@ export class ContactComponent implements OnInit {
 
   contact: any;
 
+  private emailSubscription: Subscription;
+  private contactformSubscription: Subscription;
+
   ngOnInit() {
     this.contactForm = this.creatForm();
   }
 
   constructor(
     private fb: FormBuilder,
-    private cs: ContactService
+    private cs: ContactService,
+    private es: EmailService
   ) { }
 
   creatForm() {
@@ -43,11 +49,16 @@ export class ContactComponent implements OnInit {
       'phone': this.contactForm.controls.phone.value,
       'message': this.contactForm.controls.message.value
     };
-    this.cs.createContact(ob).subscribe(contact => {
+    this.contactformSubscription = this.cs.createContact(ob).subscribe(contact => {
       console.log(contact);
       if (contact) {
         this.contact = contact;
       }
+    });
+    this.emailSubscription = this.es.sendEmail(ob).subscribe(data => {
+      console.log('email was sent');
+    }, err => {
+      console.log('err');
     });
     this.clearFunction();
   }
@@ -55,6 +66,15 @@ export class ContactComponent implements OnInit {
   private clearFunction(): void {
     this.formDirective.resetForm();
     this.contactForm.reset();
+  }
+
+  ngOnDestroy() {
+    if (this.contactformSubscription) {
+      this.contactformSubscription.unsubscribe();
+    }
+    if (this.emailSubscription) {
+      this.emailSubscription.unsubscribe();
+    }
   }
 
 }

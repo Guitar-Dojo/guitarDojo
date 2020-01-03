@@ -6,6 +6,7 @@ export const environment = {
   production: false,
 
   contactAPI: 'http://localhost:8080/',
+  emailAPI: 'http://localhost:8080/',
   devMode: false
 
 };
