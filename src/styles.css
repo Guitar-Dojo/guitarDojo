@@ -19,16 +19,16 @@ p {
 }
 
 .dojo-btn {
-    color: #333;
-    background: #fff;
-    border: 1px solid #fff;
+    color: #fff;
+    background: #333;
+    border: 1px solid #333;
     height: 40px;
     width: 40%;
 }
 
 .dojo-btn:hover {
-    color: #fff;
-    background: #333;
+    color: #333;
+    background: #fff;
     transition: 300ms;
 }
 
@@ -36,6 +36,10 @@ p {
     width: 100%;
     height: auto;
     overflow: hidden;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 html, body { height: 100%; }

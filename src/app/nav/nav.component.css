@@ -11,3 +11,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
     font-weight: 200;
     font-size: 14px;
 }
+
+.navbar-collapse {
+  z-index: 10;
+}
