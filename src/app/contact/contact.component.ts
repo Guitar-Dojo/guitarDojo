@@ -3,6 +3,8 @@ import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 import { ContactService } from 'src/app/services/Contact.service';
 import { EmailService } from 'src/app/services/Email.service';
 import { Subscription } from 'rxjs';
+import { ResponseModalComponent } from '../modals/response-modal/response-modal.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-contact',
@@ -20,6 +22,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   private emailSubscription: Subscription;
   private contactformSubscription: Subscription;
+  public modalSubscription: Subscription;
 
   ngOnInit() {
     this.contactForm = this.creatForm();
@@ -28,7 +31,8 @@ export class ContactComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private cs: ContactService,
-    private es: EmailService
+    private es: EmailService,
+    public dialog: MatDialog
   ) { }
 
   creatForm() {
@@ -60,6 +64,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     }, err => {
       console.log('err');
     });
+    this.responseModal();
     this.clearFunction();
   }
 
@@ -68,12 +73,30 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.contactForm.reset();
   }
 
+  responseModal() {
+    const dialogRef = this.dialog.open(ResponseModalComponent, {
+      panelClass: 'custom-dialog-container',
+      data: {
+
+      },
+      disableClose: true,
+      width: '600px',
+      height: '520px'
+    });
+    dialogRef.afterClosed().subscribe(res => {
+
+    });
+  }
+
   ngOnDestroy() {
     if (this.contactformSubscription) {
       this.contactformSubscription.unsubscribe();
     }
     if (this.emailSubscription) {
       this.emailSubscription.unsubscribe();
+    }
+    if (this.modalSubscription) {
+      this.modalSubscription.unsubscribe();
     }
   }
 

@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none !important
+}
+
 .container-fluid {
     padding: 0;
     background: #f0f4f4
@@ -38,12 +52,11 @@ p {
     overflow: hidden;
 }
 
+.custom-dialog-container .mat-dialog-container {
+  height: 250px;
+}
+
 mat-form-field {
   width: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
