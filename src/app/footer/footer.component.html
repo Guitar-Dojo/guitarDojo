@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 order-2 order-md-1">
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8 ml-lg-5">
@@ -20,24 +20,28 @@
           </div>
           <div class="row mt-3 px-3 ">
             <mat-icon svgIcon="email" class="mr-3"></mat-icon>
-            <p>guitardojosatx@gmail.com</p>
+            <p>
+              <a href="#" target="_blank">
+                guitardojosatx@gmail.com
+              </a>
+            </p>
           </div>
         </div>
         <div class="col-2"></div>
       </div>
     </div>
 
-    <div class="col-12 col-md-4  d-flex flex-column align-items-center justify-content-center">
+    <div class="col-12 col-md-4 pt-4 d-flex flex-column align-items-center justify-content-center order-1 order-md-2">
       <img id="logo" src="../../assets/footerAssets/guitar-dojo-logo.png">
     </div>
 
-    <div class="col-12 col-md-4 d-flex flex-column align-items-start justify-content-center">
+    <div class="col-12 col-md-4 py-4 d-flex flex-column align-items-center align-items-lg-start justify-content-center order-3">
       <p>
         Beceome the Rock Star you were meant to be.<br>
         Classes available!
       </p>
       <!-- <div class="row justify-content-start w-100"> -->
-        <button class="btn dojo-btn">Sign Up!</button>
+        <a class="btn dojo-btn" [routerLink]="['/contact']" >Sign Up!</a>
       <!-- </div> -->
     </div>
   </div>
