@@ -10,11 +10,13 @@
     /* box-shadow: 5px 10px 8px #888888; */
 }
 
-.dojo-btn:hover {
+/* .dojo-btn:hover {
   color: #333;
   background: #fff;
   transition: 300ms;
-}
+} */
+
+
 
 .form-heading {
   font-weight: 400;

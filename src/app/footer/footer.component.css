@@ -1,0 +1,16 @@
+.container-fluid {
+  background: #303333;
+  color: #fff;
+}
+
+#logo {
+  width: 150px;;
+  height: 150px;
+}
+
+@media (max-width: 991) {
+  #logo {
+    width: 100px;
+    height: 100px;
+  }
+}

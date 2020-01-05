@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavComponent } from './nav/nav.component';
 import { ResponseModalComponent } from './modals/response-modal/response-modal.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ResponseModalComponent } from './modals/response-modal/response-modal.c
     LandingPageComponent,
     NavComponent,
     ResponseModalComponent,
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,
