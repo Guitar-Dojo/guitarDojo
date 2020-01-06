@@ -42,14 +42,14 @@ p {
 
 .dojo-btn {
     color: #fff;
-    background: #C10009;
-    border: 1px solid #C10009;
+    background: #f43605;
+    border: 1px solid #f43605;
     height: 40px;
     width: 40%;
 }
 
 .dojo-btn:hover {
-    color: #C10009;
+    color: #f43605;
     background: #fff;
     transition: 300ms;
 }
@@ -69,6 +69,6 @@ mat-form-field {
 }
 
 mat-icon path {
-  fill: #C10009;
+  fill: #f43605;
 }
 

@@ -8,9 +8,17 @@
   height: 150px;
 }
 
+#credit-row {
+  background: #2a2d2d;
+  color: rgba(212, 175, 55, .4);
+  height: 35px;
+}
+
 @media (max-width: 991) {
   #logo {
     width: 100px;
     height: 100px;
   }
 }
+
+

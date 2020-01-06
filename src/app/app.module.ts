@@ -40,7 +40,7 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    NgxMaskModule,
+    NgxMaskModule.forRoot(),
     ReactiveFormsModule
   ],
   exports: [
