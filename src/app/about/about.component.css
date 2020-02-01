@@ -1,7 +1,14 @@
 .instructor {
-    color: #0000ff;
+    color: #00AFB5;
 }
 
 #about-image {
     width: 100%;
+}
+
+.header-image {
+  height: 250px;
+  background: url('../../assets/aboutPageAssets/guitarDojoAbout.jpg') no-repeat center center;
+  margin-left: 0;
+  margin-right: 0;
 }

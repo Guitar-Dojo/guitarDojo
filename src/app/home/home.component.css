@@ -8,5 +8,8 @@
   background: url('../../assets/homeAssets/guitarDojoHome.jpg') no-repeat center center;
   margin-left: 0;
   margin-right: 0;
-  /* position: fixed; */
+}
+
+.jarallax {
+  /* position: relative; */
 }

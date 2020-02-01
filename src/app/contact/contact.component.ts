@@ -1,17 +1,19 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 import { ContactService } from 'src/app/services/Contact.service';
 import { EmailService } from 'src/app/services/Email.service';
 import { Subscription } from 'rxjs';
 import { ResponseModalComponent } from '../modals/response-modal/response-modal.component';
 import { MatDialog } from '@angular/material';
+import 'jarallax';
+declare var jarallax: any;
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('formDirective') private formDirective: NgForm;
   contactForm: FormGroup;
 
@@ -26,6 +28,12 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.contactForm = this.creatForm();
+  }
+
+  ngAfterViewInit() {
+    jarallax(document.querySelectorAll('.jarallax'), {
+      speed: .2
+    });
   }
 
   constructor(
