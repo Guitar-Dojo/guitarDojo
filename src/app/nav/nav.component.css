@@ -10,6 +10,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 .nav-link {
     font-weight: 200;
     font-size: 14px;
+    color: #eee !important;
 }
 
 .navbar-collapse {

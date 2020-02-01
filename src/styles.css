@@ -25,32 +25,33 @@ a:hover {
 
 .container-fluid {
     padding: 0;
-    background: #f0f4f4
+    background: #303333
 }
 
 .container {
-    background: #f0f4f4;
+    background: #303333;
 }
 
 .heading-light {
     font-weight: 200;
 }
 
-p {
+p, h1, h2, h3, h4, h5, h6 {
     font-weight: 200;
+    color: #ddd;
 }
 
 .dojo-btn {
-    color: #fff;
-    background: #f43605;
-    border: 1px solid #f43605;
+    color: #333;
+    background: #ffcd00;
+    border: 1px solid #ffcd00;
     height: 40px;
     width: 40%;
 }
 
 .dojo-btn:hover {
-    color: #f43605;
-    background: #fff;
+    color: #ffcd00;
+    background: transparent;
     transition: 300ms;
 }
 
@@ -69,6 +70,6 @@ mat-form-field {
 }
 
 mat-icon path {
-  fill: #f43605;
+  fill: #ffcd00;
 }
 

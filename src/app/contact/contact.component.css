@@ -1,6 +1,12 @@
+.containre-fluid {
+  padding: 0;
+}
+
 .header-image {
     height: 250px;
     background: url('../../assets/homeAssets/guitarDojoHome.jpg') no-repeat center center;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .form-container {
@@ -8,6 +14,7 @@
     border-radius: 10px;
     padding: 20px;
     /* box-shadow: 5px 10px 8px #888888; */
+    background: #ccc;
 }
 
 /* .dojo-btn:hover {
@@ -15,6 +22,19 @@
   background: #fff;
   transition: 300ms;
 } */
+
+.dojo-btn {
+  background: #ffcd00;
+  color: #333;
+  border: 1px solid #ffcd00;
+}
+
+.dojo-btn:hover {
+  background: #333;
+  color: #ffcd00;
+  border: 1px solid #ffcd00;
+}
+
 
 
 
