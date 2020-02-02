@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 
 html, body { height: 100%; }
@@ -73,3 +74,7 @@ mat-icon path {
   fill: #ffcd00;
 }
 
+/* hide dark grey sub menu of current/clicked day on dates calendar */
+.cal-month-view .cal-open-day-events {
+  display: none;
+}

@@ -4,7 +4,7 @@ import { ContactService } from 'src/app/services/Contact.service';
 import { EmailService } from 'src/app/services/Email.service';
 import { Subscription } from 'rxjs';
 import { ResponseModalComponent } from '../modals/response-modal/response-modal.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import 'jarallax';
 declare var jarallax: any;
 
@@ -14,7 +14,7 @@ declare var jarallax: any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('formDirective') private formDirective: NgForm;
+  @ViewChild('formDirective', {static: true}) private formDirective: NgForm;
   contactForm: FormGroup;
 
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
