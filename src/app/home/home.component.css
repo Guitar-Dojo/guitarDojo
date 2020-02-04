@@ -22,13 +22,28 @@
   border: 1px solid #eee;
   border-radius: 10px;
   position: realtive;
-  top: -190px;
+  top: 100px;
   left: 10px;
 }
+
+.details a {
+  color: #777;
+}
+
+.details a:hover {
+  color: #999;
+}
+
+.event-img {
+  width: 100%;
+  height: auto;
+}
+
 
 .details {
   background: #ddd;
   padding: 20px;
+  color: #303333;
 }
 
 .details > p, h3 {
