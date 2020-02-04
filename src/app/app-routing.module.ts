@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router'
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CalendarComponent } from './calendar/calendar.component';
+
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling: 'enabled',
+  // ...any other options you'd like to use
+};
 
 const routes: Routes = [
   {
@@ -33,10 +38,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, {
-      anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'top'
-    })
+    RouterModule.forRoot(routes, routerOptions)
   ],
   exports: [RouterModule],
   declarations: []

@@ -1,18 +1,7 @@
 <div class="container-fluid">
 
-  <div id="top-area" class="row h-100 py-5">
-    <div
-      class="col-12 col-lg-8 offset-lg-2 d-flex flex-column align-items-center justify-content-center"
-    >
-      <h1 class="mb-3 text-center">keeping up with <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
-      <h3 class="mb-3 text-center">
-        we take your requsets.
-      </h3>
-      <h3 class="mb-3 text-center px-2">
-        just don't take them seriously.
-      </h3>
-      <a class="btn btn-primary" routerLink="/contact">want to book us?</a>
-    </div>
+  <div id="top-area" class="row jarallax py-5">
+
   </div>
 
   <div class="row text-center mt-5">
@@ -227,15 +216,15 @@
     </div>
 
     <div class="modal-body">
-      <div>
-        <pre>Date: {{ modalData?.event.start | date }}</pre>
-      </div>
-      <div class="row">
-        <ng-container *ngFor="let event of myEvents">
-          <div class="col-12" *ngIf="event.start === modalData?.event.start">
-            <pre>Start Time: {{ event.start | date: 'h:mm a' }}</pre>
+      <div class="row w-100">
+        <ng-container *ngFor="let event of dojoEvents">
+          <div class="row w-100 justify-content-center pb-3">
+            <img  src="{{ event.img }}">
+          </div>
+          <div class="col-12" >
+            <p>Start Time: {{ event.start | date: 'h:mm a' }}</p>
             <p>Location:
-              <a href="https://goo.gl/maps/nRxWLAje1AQGLJwi7" target="_blank">
+              <a [href]="event.locationHREF" target="_blank">
                 {{ event.location }}
               </a>
             </p>
@@ -248,7 +237,7 @@
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn the501s-btn" (click)="close()">
+      <button type="button" class="btn dojo-btn" (click)="close()">
         OK
       </button>
     </div>

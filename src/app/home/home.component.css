@@ -13,3 +13,24 @@
 .jarallax {
   /* position: relative; */
 }
+
+.date {
+  background: #eee;
+  padding: 10px;
+  height: 40%;
+  width: 25%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  position: realtive;
+  top: -190px;
+  left: 10px;
+}
+
+.details {
+  background: #ddd;
+  padding: 20px;
+}
+
+.details > p, h3 {
+  color: #303333;
+}

@@ -3,7 +3,8 @@ import {
   ChangeDetectionStrategy,
   ViewChild,
   TemplateRef,
-  OnInit
+  OnInit,
+  AfterViewInit
 } from '@angular/core';
 import {
   startOfDay,
@@ -23,6 +24,11 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { EventbriteService } from '../services/eventbrite.service';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { DojoEvent } from '../models/dojo-event';
+import 'jarallax';
+declare var jarallax: any;
 
 const colors: any = {
   red: {
@@ -44,7 +50,7 @@ const colors: any = {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit, AfterViewInit {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -52,6 +58,12 @@ export class CalendarComponent implements OnInit {
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
+
+  newEvent: any;
+
+  dojoEvent: DojoEvent;
+
+  dojoEvents: DojoEvent[] = [];
 
   modalData: {
     action: string;
@@ -78,53 +90,98 @@ export class CalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
+  events: CalendarEvent[] = []
+  //   {
+  //     start: subDays(startOfDay(new Date()), 1),
+  //     end: addDays(new Date(), 1),
+  //     title: 'A 3 day event',
+  //     color: colors.red,
+  //     actions: this.actions,
+  //     allDay: true,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true
+  //     },
+  //     draggable: true
+  //   },
+  //   {
+  //     start: startOfDay(new Date()),
+  //     title: 'An event with no end date',
+  //     color: colors.yellow,
+  //     actions: this.actions
+  //   },
+  //   {
+  //     start: subDays(endOfMonth(new Date()), 3),
+  //     end: addDays(endOfMonth(new Date()), 3),
+  //     title: 'A long event that spans 2 months',
+  //     color: colors.blue,
+  //     allDay: true
+  //   },
+  //   {
+  //     start: addHours(startOfDay(new Date()), 2),
+  //     end: addHours(new Date(), 2),
+  //     title: 'A draggable and resizable event',
+  //     color: colors.yellow,
+  //     actions: this.actions,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true
+  //     },
+  //     draggable: true
+  //   }
+  // ];
 
   activeDayIsOpen: boolean = true;
+  constructor(
+    private modal: NgbModal,
+    private ebs: EventbriteService
+  ) {}
 
   ngOnInit() {
+    this.getEvents();
+    this.getModalData();
   }
 
-  constructor(private modal: NgbModal) {}
+  ngAfterViewInit() {
+    jarallax(document.querySelectorAll('.jarallax'), {
+      speed: .3
+    })
+  }
+
+  getEvents(){
+    this.ebs.getEvents().subscribe(e => {
+      console.log(e.events);
+      e.events.forEach(event => {
+        this.newEvent = {
+          start: addHours(new Date(event.start.local), 0),
+          end: addHours(new Date(event.end.local), 2),
+          title: event.name.text,
+          color: colors.blue
+        }
+        this.events.push(this.newEvent);
+        this.refresh.next();
+      });
+    })
+  }
+
+  getModalData() {
+    this.ebs.getEvents().subscribe(e => {
+      e.events.forEach(event => {
+        this.dojoEvent = {
+          title: event.name.text,
+          start: event.start.local,
+          end: event.end.local,
+          description: event.description.text,
+          location: event.venue.address.localized_address_display,
+          eventUrl: event.url,
+          img: event.logo.url,
+          locationHREF: 'http://www.google.com/maps/place/' + event.venue.latitude + ',' + event.venue.longitude
+        };
+        this.dojoEvents.push(this.dojoEvent);
+        console.log(this.dojoEvents);
+      });
+    });
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -161,6 +218,9 @@ export class CalendarComponent implements OnInit {
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: 'lg' });
+    this.dojoEvents.forEach(r => {
+
+    })
   }
 
   addEvent(): void {

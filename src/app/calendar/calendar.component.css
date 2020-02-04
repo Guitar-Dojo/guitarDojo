@@ -1,0 +1,42 @@
+.modal-header, .modal-body, .modal-footer {
+  background: #555;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333;
+}
+
+.modal-footer {
+  border-top: 1px solid #333;
+}
+
+.close {
+  text-shadow: none;
+}
+
+.close:hover {
+  color: #777
+}
+
+
+.dojo-btn {
+  color: #333;
+  background: #ffcd00;
+  border: 1px solid #ffcd00;
+  height: 40px;
+  width: 40%;
+}
+
+.dojo-btn:hover {
+  color: #ffcd00;
+  background: transparent;
+  transition: 300ms;
+}
+
+#top-area {
+  height: 250px;
+  background: url('../../assets/homeAssets/guitarDojoHome.jpg') no-repeat center center;
+  margin-left: 0;
+  margin-right: 0;
+
+}

@@ -31,4 +31,16 @@ nav.navbar.navbar-expand-lg.navbar-light {
     width: 100px;
     height: 100px;
   }
+
+  .nav-link {
+    color: #303333 !important;
+  }
+
+  .navbar-collapse {
+    background: #eee !important;
+  }
+
+  .navbar-light .navbar-toggler {
+    color: #ccc !important;
+  }
 }

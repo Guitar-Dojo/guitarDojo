@@ -7,6 +7,7 @@ export const environment = {
 
   contactAPI: 'http://localhost:8080/',
   emailAPI: 'http://localhost:8080/',
+  eventBriteAPI: 'http://localhost:8080/',
   devMode: false
 
 };
