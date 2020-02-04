@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  contactAPI: 'https://api.guitardojo.com/',
-  emailAPI: 'https://api.guitardojo.com/',
-  eventBriteAPI: 'https://api.guitardojo.com/'
+  contactAPI: 'https://api.guitardojosatx.com/',
+  emailAPI: 'https://api.guitardojosatx.com/',
+  eventBriteAPI: 'https://api.guitardojosatx.com/'
 };
