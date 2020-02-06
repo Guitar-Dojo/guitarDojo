@@ -17,10 +17,10 @@ textarea:focus {
 }
 
 a {
-  color: #999
+  color: #ccc;
 }
 a:hover {
-  color: #ccc;
+  color: #eee;
   text-decoration: none;
 }
 
