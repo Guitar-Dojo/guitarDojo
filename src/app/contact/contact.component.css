@@ -24,15 +24,15 @@
 } */
 
 .dojo-btn {
-  background: #ffcd00;
+  background: #ffc045;
   color: #333;
-  border: 1px solid #ffcd00;
+  border: 1px solid #ffc045;
 }
 
 .dojo-btn:hover {
   background: #333;
-  color: #ffcd00;
-  border: 1px solid #ffcd00;
+  color: #ffc045;
+  border: 1px solid #ffc045;
 }
 
 

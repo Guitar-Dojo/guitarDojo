@@ -21,14 +21,14 @@
 
 .dojo-btn {
   color: #333;
-  background: #ffcd00;
-  border: 1px solid #ffcd00;
+  background: #ffc045;
+  border: 1px solid #ffc045;
   height: 40px;
   width: 40%;
 }
 
 .dojo-btn:hover {
-  color: #ffcd00;
+  color: #ffc045;
   background: transparent;
   transition: 300ms;
 }

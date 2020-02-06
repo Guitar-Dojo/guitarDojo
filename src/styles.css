@@ -44,14 +44,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .dojo-btn {
     color: #333;
-    background: #ffcd00;
-    border: 1px solid #ffcd00;
+    background: #ffc045;
+    border: 1px solid #ffc045;
     height: 40px;
     width: 40%;
 }
 
 .dojo-btn:hover {
-    color: #ffcd00;
+    color: #ffc045;
     background: transparent;
     transition: 300ms;
 }
@@ -71,7 +71,7 @@ mat-form-field {
 }
 
 mat-icon path {
-  fill: #ffcd00;
+  fill: #ffc045;
 }
 
 /* hide dark grey sub menu of current/clicked day on dates calendar */
