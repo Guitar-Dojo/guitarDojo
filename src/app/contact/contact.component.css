@@ -24,17 +24,19 @@
 } */
 
 .dojo-btn {
-  background: #ffc045;
   color: #333;
-  border: 1px solid #ffc045;
+  background: #00B2A9;
+  border: 1px solid #00B2A9;
+  height: 40px;
+  width: 40%;
+  border-bottom: 2px solid #FF8200;
 }
 
 .dojo-btn:hover {
-  background: #333;
-  color: #ffc045;
-  border: 1px solid #ffc045;
+  /* color: #00B2A9; */
+  background: transparent;
+  transition: 300ms;
 }
-
 
 
 

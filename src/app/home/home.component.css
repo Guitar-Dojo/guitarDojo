@@ -14,6 +14,21 @@
   /* position: relative; */
 }
 
+.dojo-btn {
+  color: #333;
+  background: #00B2A9;
+  border: 1px solid #00B2A9;
+  height: 40px;
+  width: 40%;
+  border-bottom: 2px solid #FF8200;
+}
+
+.dojo-btn:hover {
+  color: #00B2A9;
+  background: transparent;
+  transition: 300ms;
+}
+
 .date {
   background: #eee;
   padding: 10px;
