@@ -13,6 +13,10 @@ nav.navbar.navbar-expand-lg.navbar-light {
     color: #eee !important;
 }
 
+.nav-link:hover {
+  color: #ffc045 !important;
+}
+
 .navbar-collapse {
   z-index: 10;
 }
