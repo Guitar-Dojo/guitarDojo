@@ -13,7 +13,7 @@ export class EmailService {
   ) {}
 
   sendEmail(email: Object): Observable<any> {
-    return this.http.post(environment.emailAPI + 'sendMail', email, {responseType: 'text'});
+    return this.http.post(environment.api + 'sendMail', email, {responseType: 'text'});
 
   }
 

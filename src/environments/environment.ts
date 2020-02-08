@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
 
-  contactAPI: 'http://localhost:8080/',
-  emailAPI: 'http://localhost:8080/',
-  eventBriteAPI: 'http://localhost:8080/',
+  // contactAPI: 'http://localhost:8080/',
+  // emailAPI: 'http://localhost:8080/',
+  // eventBriteAPI: 'http://localhost:8080/',
+  api: 'http://localhost:8080/',
   devMode: false
 
 };

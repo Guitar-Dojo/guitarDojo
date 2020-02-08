@@ -20,7 +20,7 @@ export class ContactService {
 
   createContact(contact: Object): Observable<Object> {
     console.log(contact);
-    return this.http.post<Object>(environment.contactAPI + 'contact/create', contact, httpOptions);
+    return this.http.post<Object>(environment.api + 'contact/create', contact, httpOptions);
   }
 
 }

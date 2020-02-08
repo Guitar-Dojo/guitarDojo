@@ -13,6 +13,6 @@ export class EventbriteService {
   ) { }
 
   getEvents() {
-    return this.http.get<any>(environment.eventBriteAPI + 'events') as Observable<any>;
+    return this.http.get<any>(environment.api + 'events') as Observable<any>;
   }
 }

@@ -11,21 +11,28 @@
       </h4>
     </div>
     <div class="col-lg-6">
-        <h5 class="heading-light">
-          STAFF
-        </h5>
-        <p>
-          <span class="instructor"> Derek Badillo</span>, Owner
-        </p>
-        <p>
-          <span class="instructor">Jack Butler</span>, Guitar Instructor
-        </p>
-        <p>
-          <span class="instructor">Jon Bonham</span>, Drum Instructor
-        </p>
-        <p>
-          <span class="instructor">J.S. Bach</span>, Piano Instructor
-        </p>
+      <h5 class="heading-light">
+        STAFF
+      </h5>
+      <div class="row" *ngFor="let member of staffMembers">
+        <div class="col">
+          <p>
+            <span class="instructor">
+              <a class="open-modal-btn" (click)="open(member.id)">
+                {{ member.name }}
+              </a>
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- <div class="row">
+    <div class="col" *ngFor="let member of staffMembers">
+      <a (click)="open()">
+        {{ member.name }}
+      </a>
+    </div>
+  </div> -->
+
 </div>

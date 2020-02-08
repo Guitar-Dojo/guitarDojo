@@ -12,3 +12,7 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+.open-modal-btn:hover {
+  cursor: pointer;
+}

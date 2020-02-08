@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { ResponseModalComponent } from './modals/response-modal/response-modal.c
 import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DateModalComponent } from './modals/date-modal/date-modal.component';
+import { StaffMemberModalComponent } from './modals/staff-member-modal/staff-member-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
     FooterComponent,
     CalendarComponent,
     DateModalComponent,
+    StaffMemberModalComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -54,7 +57,8 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    NgbModule
+    NgbModule,
+    MatButtonModule
   ],
   exports: [
     // MatFormField
@@ -62,7 +66,8 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ResponseModalComponent
+    ResponseModalComponent,
+    StaffMemberModalComponent
   ]
 })
 export class AppModule { }
