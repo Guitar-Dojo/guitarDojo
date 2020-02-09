@@ -14,9 +14,9 @@
       <h5 class="heading-light">
         STAFF
       </h5>
-      <div class="row" *ngFor="let member of staffMembers">
+      <div class="row member" *ngFor="let member of staffMembers; let i = index">
         <div class="col">
-          <p>
+          <p class="name">
             <span class="instructor">
               <a class="open-modal-btn" (click)="open(member.id)">
                 {{ member.name }}

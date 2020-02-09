@@ -6,18 +6,23 @@ import 'jarallax';
 import { StaffMemberModalComponent } from '../modals/staff-member-modal/staff-member-modal.component';
 import { StaffMemberService } from '../services/staff-member.service';
 import { MatDialog } from '@angular/material/dialog';
+
+
 declare let jarallax: any;
+declare var $: any;
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit, AfterViewInit {
 
   id: any;
   staffMembers: StaffMember[] = [];
   staffMember: StaffMember;
+
+  $: any;
 
   constructor(
 
@@ -28,6 +33,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getStaffMembers();
+    this.nameAnimation();
   }
 
   ngAfterViewInit() {
@@ -42,7 +48,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
         this.staffMembers.push(member);
       });
     });
-    console.log(this.staffMembers);
     return this.staffMembers;
   }
 
@@ -64,7 +69,20 @@ export class AboutComponent implements OnInit, AfterViewInit {
     });
     dialogRef.afterClosed().subscribe(res => {
 
-    })
+    });
   }
 
+  nameAnimation() {
+
+    setInterval(function() {
+      $('.name').each(function(index) {
+        var $this = $(this);
+        setTimeout(function() {
+          $this.addClass('wiggle-p');
+        }, 300 * index);
+      });
+      $('.name').removeClass('wiggle-p');
+    }, 4000);
+    // clearInterval(animationInterval);
+  }
 }
