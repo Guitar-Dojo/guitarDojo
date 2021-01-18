@@ -67,11 +67,11 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         this.contact = contact;
       }
     });
-    this.emailSubscription = this.es.sendEmail(ob).subscribe(data => {
-      console.log('email was sent');
-    }, err => {
-      console.log('err');
-    });
+    // this.emailSubscription = this.es.sendEmail(ob).subscribe(data => {
+    //   console.log('email was sent');
+    // }, err => {
+    //   console.log('err');
+    // });
     this.responseModal();
     this.clearFunction();
   }

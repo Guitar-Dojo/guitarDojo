@@ -8,7 +8,7 @@ export const environment = {
   // contactAPI: 'http://localhost:8080/',
   // emailAPI: 'http://localhost:8080/',
   // eventBriteAPI: 'http://localhost:8080/',
-  api: 'http://localhost:8080/',
+  api: 'https://l4mu90j1va.execute-api.us-east-1.amazonaws.com/dev/api',
   devMode: false
 
 };
