@@ -6,7 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
-import { NgxMaskModule } from 'ngx-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -26,6 +26,9 @@ import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DateModalComponent } from './modals/date-modal/date-modal.component';
 import { StaffMemberModalComponent } from './modals/staff-member-modal/staff-member-modal.component';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 
 @NgModule({
   declarations: [
